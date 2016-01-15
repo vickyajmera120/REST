@@ -25,7 +25,7 @@ public class ActivityResource {
 	private ActivityRepository activityRepository = new ActivityRepositoryStub();
 	
 	@PUT
-	@Path("activity")
+	@Path("{activityId}")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
 	public Response update(Activity activity) {
