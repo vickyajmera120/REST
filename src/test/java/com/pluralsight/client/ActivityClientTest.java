@@ -11,6 +11,20 @@ import com.pluralsight.model.Activity;
 public class ActivityClientTest {
 
 	@Test
+	public void testPut() {
+		Activity activity = new Activity();
+		activity.setDescription("Swimming");
+		activity.setDuration(55);
+		
+		ActivityClient client = new ActivityClient();
+		
+		activity = client.update(activity);
+		
+		assertNotNull(activity);
+	}
+	
+	
+	@Test
 	public void testCreate() {
 		ActivityClient client = new ActivityClient();
 		
@@ -20,10 +34,8 @@ public class ActivityClientTest {
 		
 		activity = client.create(activity);
 		
-		assertNotNull(activity);
-		
+		assertNotNull(activity);		
 	}
-	
 	
 	@Test
 	public void testGet() {

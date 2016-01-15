@@ -55,4 +55,17 @@ public class ActivityClient {
 		
 		return response.readEntity(Activity.class);
 	}
+
+	public Activity update(Activity activity) {
+		
+		WebTarget target = client.target("http://localhost:8080/services/webapi/");
+		
+		Response response = target.path("activities/" + activity.getId()).request(MediaType.APPLICATION_JSON).put(Entity.entity(activity, MediaType.APPLICATION_JSON)); 
+
+		if(response.getStatus() != 200) {
+			throw new RuntimeException(response.getStatus() + " : There was an error in the server!");
+		}
+		
+		return response.readEntity(Activity.class);
+	}
 }

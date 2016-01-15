@@ -9,6 +9,20 @@ import com.pluralsight.model.User;
 public class ActivityRepositoryStub implements ActivityRepository {
 	
 	@Override
+	public Activity update(Activity activity) {
+		//search the database to see if we have an activity with that ID already
+		//select * from Activity where id =?
+		//if result-size == 0
+		//insert into the Activity table
+		//else
+		//update the activity table
+		
+		return activity;
+		
+		
+	}
+	
+	@Override
 	public void create(Activity activity) {
 
 		//Should issue a Insert statement to the db
